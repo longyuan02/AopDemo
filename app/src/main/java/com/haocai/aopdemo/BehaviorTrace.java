@@ -19,5 +19,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 public @interface BehaviorTrace {
     String value();
+
     int type();
 }
