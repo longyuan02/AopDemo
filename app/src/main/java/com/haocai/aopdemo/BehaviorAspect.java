@@ -33,13 +33,14 @@ public class BehaviorAspect {
      * 切成什么样子之后，怎么去处理
      */
 
-    @Around("annoBehavior()")
-    public Object dealPoint(ProceedingJoinPoint point) throws Throwable {
+    @Around("annoBehavior() && @annotation(aaa)")
+    public Object dealPoint(ProceedingJoinPoint point, BehaviorTrace aaa) throws Throwable {
         //方法执行前
         MethodSignature methodSignature = (MethodSignature) point.getSignature();
         BehaviorTrace behaviorTrace = methodSignature.getMethod().getAnnotation(BehaviorTrace.class);
-//        String contentType = behaviorTrace.value();
-//        int type = behaviorTrace.type();
+        String contentType = behaviorTrace.value();
+        int type = behaviorTrace.type();
+        aaa.value();
         Log.i(TAG, "使用时间：   " + simpleDateFormat.format(new Date()));
         long beagin = System.currentTimeMillis();
         //方法执行时

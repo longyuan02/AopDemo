@@ -12,6 +12,7 @@ import android.view.View;
 import java.text.SimpleDateFormat;
 
 import com.haocai.aopdemo.aspectJ.RequestPermissions;
+import com.haocai.aopdemo.login.AOP1;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Main======";
@@ -64,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    @BehaviorTrace(value = "打字:", type = 1)
+//    @BehaviorTrace(value = "打字:", type = 1)
+//    @SellingPoints(printLog = "ddds")
+    @AOP1(aopValue = "111")
     public void mText(View view) {
         //打字模块逻辑
         {
-            SystemClock.sleep(3000);
+//            SystemClock.sleep(3000);
             Log.i(TAG, "打字逻辑，我摇到了一个大红包");
         }
-
     }
-
 }

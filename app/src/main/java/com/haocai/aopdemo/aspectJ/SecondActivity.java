@@ -19,6 +19,19 @@ public class SecondActivity extends AppCompatActivity {
     public void SecondClick(View view) {
         Log.w("change=====", MainActivity.isLogin + "");
         MainActivity.isLogin = !MainActivity.isLogin;
+        finish();
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("onPause======", "onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("onDestroy======", "onDestroy");
     }
 }

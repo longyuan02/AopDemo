@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 
 //ElementType.METHOD 用于描述方法
 @Target(ElementType.METHOD)
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface BehaviorTrace {
     String value();
 

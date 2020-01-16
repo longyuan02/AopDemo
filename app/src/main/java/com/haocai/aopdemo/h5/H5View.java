@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.haocai.aopdemo.R;
+import com.haocai.aopdemo.login.LoginClose;
 
 public class H5View extends AppCompatActivity {
     private WebView webView;
@@ -74,5 +75,11 @@ public class H5View extends AppCompatActivity {
             }
         });
         webView.loadUrl("http://www.baidu.com");
+    }
+
+    @LoginClose(close = true)
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
